@@ -5,13 +5,6 @@ $(function() {
 
 	$('.slot').droppable({
 		drop: function(event, ui) {
-			if ($(this).hasClass('inventory')) {
-				ui.draggable.addClass('in-inventory');
-				ui.draggable.removeClass('in-slot');
-			} else {
-				ui.draggable.addClass('in-slot');
-				ui.draggable.removeClass('in-inventory');
-			}
 
 			place(ui.draggable, $(this));
 		}
@@ -38,5 +31,13 @@ $(function() {
 		item.offset(slot.offset());
 		item.data('slot', slot);
 		slot.data('item', item);
+
+		if (slot.hasClass('inventory')) {
+			item.addClass('in-inventory');
+			item.removeClass('in-slot');
+		} else {
+			item.addClass('in-slot');
+			item.removeClass('in-inventory');
+		}
 	}
 });
