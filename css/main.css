@@ -1,0 +1,18 @@
+table.inventory td {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	width: 32px;
+	height: 32px;
+}
+
+img.item {
+	width: 64px;
+	height: 64px;
+}
+
+img.item.in-inventory {
+	width: 32px;
+	height: 32px;
+}
