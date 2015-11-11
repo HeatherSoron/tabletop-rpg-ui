@@ -1,4 +1,12 @@
-table.inventory td {
+.slot {
+	width: 64px;
+	height: 64px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+.slot.inventory {
 	border-width: 1px;
 	padding: 1px;
 	border-style: inset;
@@ -7,12 +15,9 @@ table.inventory td {
 	height: 32px;
 }
 
-.slot.weapon {
-	width: 64px;
-	height: 64px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: gray;
+.slot.armor {
+	width: 96px;
+	height: 96px;
 }
 
 img.item {
@@ -26,7 +31,12 @@ img.item.in-inventory {
 	height: 32px;
 }
 
-img.item.weapon.in-slot {
+img.item.in-slot {
 	width: 64px;
 	height: 64px;
+}
+
+img.item.armor.in-slot {
+	width: 92px;
+	height: 92px;
 }

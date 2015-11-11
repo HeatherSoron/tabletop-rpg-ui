@@ -3,11 +3,20 @@ $(function() {
 		revert: "invalid",
 	});
 
-	$('.slot').droppable({
-		drop: function(event, ui) {
+	function onDrop (event, ui) {
+		place(ui.draggable, $(this));
+	}
+	$('.slot').each(function(index, el) {
+		var def = {
+			drop: onDrop
+		};
 
-			place(ui.draggable, $(this));
+		var obj = $(el);
+		if (obj.data('slot-type')) {
+			def.accept = '.' + obj.data('slot-type');
 		}
+
+		obj.droppable(def);
 	});
 
 	function place(item, slot) {
